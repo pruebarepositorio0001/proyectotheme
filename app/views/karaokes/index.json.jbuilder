@@ -1,0 +1,1 @@
+json.array! @karaokes, partial: 'karaokes/karaoke', as: :karaoke

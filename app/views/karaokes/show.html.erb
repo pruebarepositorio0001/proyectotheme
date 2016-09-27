@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @karaoke.date %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @karaoke.score %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @karaoke.user %>
+</p>
+
+<p>
+  <strong>Song:</strong>
+  <%= @karaoke.song %>
+</p>
+
+<%= link_to 'Edit', edit_karaoke_path(@karaoke) %> |
+<%= link_to 'Back', karaokes_path %>

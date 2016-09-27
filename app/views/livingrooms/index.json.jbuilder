@@ -1,0 +1,1 @@
+json.array! @livingrooms, partial: 'livingrooms/livingroom', as: :livingroom

@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-8 col-md-offset-2">
+<div class="card card-wizard" id="wizardCard">
+<form id="wizardForm" method="" action="" novalidate="novalidate">
+		<div class="header text-center">
+		<h3 class="title">Awesome Wizard</h3>
+		<p class="category">Split a complicated flow in multiple steps</p>
+		</div>
+<div class="content">
+<div class="tab-content">
+<div class="tab-pane active" id="tab1">
+<h5 class="text-center">Please tell us more about yourself.</h5>
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+			<p class="category">
+			<strong><%= t('locals.index.name') %></strong>
+			 <%= @local.name %>
+			</p>
+			<p class="category">
+			<strong><%= t('locals.index.description') %></strong>
+			<%= @local.description %></p>
+			</p>
+		</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="actions">
+  <td>
+<%= link_to(t('general.buttonedit'),  edit_local_path(@local) , class: "btn btn-warning btn-fill pull-right" )%>
+</td>
+<td>
+<%= link_to(t('menu.livingrooms'),  local_livingrooms_path(@local)  , class: "btn btn-default btn-fill pull-right" )%>
+</td>
+<td>
+<%= link_to(t('general.buttonback'),  user_locals_path(current_user)  , class: "btn btn-default btn-fill pull-right" )%>
+</td>
+ <div class="clearfix"></div>
+</div>
+</form>
+
+</div>
+</div>
+
+
+
+

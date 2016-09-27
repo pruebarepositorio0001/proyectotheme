@@ -1,0 +1,73 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+en:
+  general:
+    buttonshow: "Show"
+    buttonedit: "Edit"
+    buttondestroy: "Delete"
+    buttonback: "Back"
+  menu:
+    locals: "Locals"
+    livingrooms: "Living Rooms"
+    products: "Products"
+    events: "Events"
+    users: "Users"
+  users:
+    index:
+      title: "Listing of Users"
+      dni: "Dni"            
+      name: "Name"
+      lastname: "Lastname"    
+      motherlastname: "Mother Lastname"
+      email: "Email"  
+      password: "Password"
+      telephone: "Telephone"
+      role: "Role"
+      button: "Create User"
+    create:
+      title: "New User"
+      selectRole: "Select Role"
+      button: "Create User" 
+  locals:
+    index:
+      title: "Listing of Locals"
+      name: "Name"
+      description: "Description"
+      button: "New Local"
+    create:
+      title: "New Local"
+      button: "Save Local"
+    edit:
+      title: "Editing Local"
+  livingrooms:
+    index:
+      title: "Listing of Living room"
+      name: "Name"
+      capacity: "Capacity"
+      button: "New Living room"
+    create:
+      title: "New Living room"
+      button: "Create Living room"              
+    edit:
+      title: "Editing Living room"

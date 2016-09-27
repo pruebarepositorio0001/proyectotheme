@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Karaokes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Score</th>
+      <th>User</th>
+      <th>Song</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @karaokes.each do |karaoke| %>
+      <tr>
+        <td><%= karaoke.date %></td>
+        <td><%= karaoke.score %></td>
+        <td><%= karaoke.user %></td>
+        <td><%= karaoke.song %></td>
+        <td><%= link_to 'Show', karaoke %></td>
+        <td><%= link_to 'Edit', edit_karaoke_path(karaoke) %></td>
+        <td><%= link_to 'Destroy', karaoke, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Karaoke', new_karaoke_path %>

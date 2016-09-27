@@ -1,0 +1,1 @@
+json.partial! "livingrooms/livingroom", livingroom: @livingroom

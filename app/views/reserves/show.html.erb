@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reserf.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @reserf.date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @reserf.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @reserf.user %>
+</p>
+
+<%= link_to 'Edit', edit_user_reserf_path(current_user,@reserf) %> |
+<%= link_to 'Back', user_reserves_path(current_user) %>

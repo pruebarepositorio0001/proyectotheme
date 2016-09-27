@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-12">
+  <div class="card card-plain">
+    <div class="card-header" data-background-color="purple">
+      <h4 class="title"><%= t 'locals.index.title' %></h4>
+    </div>
+    <div class="card-content table-responsive">
+      <table class="table table-hover ">
+        <thead>
+          <tr>
+          <th><%= t 'locals.index.name' %></th>
+          <th><%= t 'locals.index.description' %></th>
+          <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @locals.each do |local| %>
+          <tr>
+          <td><%= local.name %></td>
+          <td  align="right">
+          <%= link_to(t('general.buttonedit') , local_livingrooms_path(local), class: "btn btn-warning btn-fill btn-wd" ) %>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

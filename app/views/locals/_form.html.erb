@@ -1,0 +1,37 @@
+<%= form_for([@user,@local]) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating is-empty">
+                                                <%=  f.label t('locals.index.name') %>
+                                                <%= f.text_field :name , class:"form-control"%>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-8">
+                                            <div class="form-group label-floating is-empty">
+                                                <%= f.label   t('locals.index.description') %>
+                                                <%= f.text_field :description , class:"form-control" %>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="actions">
+                                      <%= f.submit t('general.buttonsave')  , :class => 'btn btn-success btn-fill pull-right'   %>
+                                      
+                                      <%= link_to(t('general.buttonback'), user_locals_path, class: "btn btn-info btn-fill pull-right") %>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </form>
+<% end %>          

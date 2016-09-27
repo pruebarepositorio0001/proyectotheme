@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/apple-icon.png" />
+    <link rel="icon" type="app/image/png" href="/assets/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <title> EasySoft - Karaoke </title>
+    
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-color="purple" data-image="/assets/sidebar-1.jpg">
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text">
+                    KARAOKE
+                </a>
+            </div>
+    	<div class="sidebar-wrapper">
+           
+<ul class="nav">
+                <li>
+                <% if current_user %>
+                <%= link_to user_locals_path(current_user) do %>
+                 <i class="pe-7s-home"></i>
+                  <p><%= t('menu.locals')%></p>
+                <%end%>
+                <% end %>
+                </li>
+                <li>
+                <% if current_user %>
+                <%= link_to user_locals_path(current_user) do %>
+                 <i class="pe-7s-home"></i>
+                  <p><%= t('menu.livingrooms')%></p>
+                <%end%>
+                <% end %>
+                </li>
+                <li>
+                <%= link_to user_locals_path(1) do %>
+                  <i class="pe-7s-wine"></i>
+                  <p><%= t('menu.products')%></p>
+                <% end %>
+                </li>
+                <li>
+                <%= link_to user_reserves_path(1) do %>
+                  <i class="pe-7s-wine"></i>
+                  <p><%= t('menu.reserves')%></p>
+                <% end %>
+                </li>
+                <li>
+                <%= link_to songs_path do %>
+                  <i class="pe-7s-wine"></i>
+                  <p><%= t('menu.songs')%></p>
+                <% end %>
+                </li>
+                <li>
+                <% if current_user %>
+                <%= link_to user_events_path(current_user) do %>
+                <i class="pe-7s-note2"></i>
+                <p><%= t('menu.events')%></p>
+                <% end %>
+                <% end %>
+                </li>
+                <li>
+                <%= link_to users_path do %>
+                  <i class="pe-7s-users"></i>
+                  <p><%= t('menu.users')%></p>
+                <% end %>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <i class="pe-7s-bell"></i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+				<li class="active active-pro">
+                     <% if I18n.locale == I18n.default_locale %>
+                      <%= link_to "English", :locale=>'en'%>
+                    <% else %>
+                      <%= link_to "Español", :locale=>'es'%>
+                    
+                    <%end%>
+                </li>
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-transparent navbar-absolute">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Mantenimineto Local</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Dashboard</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="material-icons"></i>
+                                <p class="hidden-lg hidden-md">Dashboard</p>
+                            </a>
+                        </li>
+                    </ul>
+                      
+                    <ul class="nav navbar-nav navbar-right">
+                    <% if current_user %>
+                    Signed in as <%= link_to current_user.friendly_name, edit_profile_path(current_user.default_profile), class: "navbar-link" %>
+                    <%= " | " %>
+                    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link" %>
+                    <% else %>
+                    <%= link_to "Sign in", new_user_session_path, class: "navbar-link" %>
+                    <% end %>
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <%= yield %>
+
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Home
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; 2016 <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                </p>
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @livingroom.name %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @livingroom.capacity %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @livingroom.state %>
+</p>
+
+<p>
+  <strong>Local:</strong>
+  <%= @livingroom.local %>
+</p>
+
+<%= link_to 'Edit', edit_local_livingroom_path(@local,@livingroom) %> |
+<%= link_to 'Back', local_livingrooms_path(@local) %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-09-25 22:38:50
+  score: 1
+  user_id: 
+  song_id: 
+
+two:
+  date: 2016-09-25 22:38:50
+  score: 1
+  user_id: 
+  song_id: 
